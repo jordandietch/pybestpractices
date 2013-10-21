@@ -1,0 +1,454 @@
+<html>
+
+<head>
+		<!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+		<!--[if lt IE 9]>
+			<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+		<![endif]-->
+	<title>Python Best Practices</title>
+    <link href="/static/prettify.css" type="text/css" rel="stylesheet" />
+    <script type="text/javascript" src="/static/jquery.min.js"></script>
+    <link href="/static/bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
+    <link href="/static/bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet">
+    <link href="/static/style.css" rel="stylesheet" type="text/css" />
+    <script src="/static/bootstrap/js/bootstrap.min.js"></script>
+	<script src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+
+<aside>
+	<div>
+		<img src="/static/bart.gif" title="Bart Best Practice"/>
+	</div>
+	<div class="aside-logo">
+		<span><img src="https://lh5.googleusercontent.com/-zhGeNuhyPc0/AAAAAAAAAAI/AAAAAAAAAFo/Zz3N6Grpz8k/photo.jpg?sz=48"></span>
+	</div>
+	<div class="aside-body">
+		<h2>Python Best Practices</h2>
+		<p><i>These are the guiding principles of Python, but are open to interpretation. A sense of humor is required for their proper interpretation.</i></p>
+	</div>
+</aside>
+
+<section class="wrapper">
+<div class="hero">
+
+
+<div class="collapsible-header">
+	<h3 data-toggle="collapse" data-target="#simple">
+	  Simple is Better Than Complex
+	</h3>
+	<i class="icon-minus"></i>
+</div>
+<div id="simple" class="collapse in">
+	<blockquote>
+		<p>Debugging is twice as hard as writing the code in the first place. Therefore, if you write the code as cleverly as possible, you are, by definition, not smart enough to debug it.</p>
+		<p><i>--Brian W. Kernighan, co-author of The C Programming</i></p>
+	</blockquote>
+</div>
+
+<div class="collapsible-header">
+	<h3 data-toggle="collapse" data-target="#whitespace1">
+	  Whitespace 1
+	</h3>
+	<i class="icon-minus"></i>
+</div>
+<div id="whitespace1" class="collapse in"> 
+<ul>
+	<li>4 spaces per indentation level.</li>
+	<li>No hard tabs.</li>
+	<li>Never mix tabs and spaces.</li>
+	<li>One blank line between functions.</li>
+	<li>Two blank lines between classes.</li>
+</ul>
+</div>
+
+<div class="collapsible-header">
+	<h3 data-toggle="collapse" data-target="#whitespace2">
+	  Whitespace 2
+	</h3>
+	<i class="icon-minus"></i>
+</div>
+<div id="whitespace2" class="collapse in"> 
+<ul>
+	<li>Add a space after "," in dicts, lists, tuples, & argument lists, and after ":" in dicts, but not before.</li>
+	<li>Put spaces around assignments & comparisons (except in argument lists).</li>
+	<li>No spaces just inside parentheses or just before argument lists.</li>
+	<li>No spaces just inside docstrings.</li>
+</ul>
+<pre class="prettyprint">
+def make_squares(key, value=0):
+    """Return a dictionary and a list..."""
+    d = {key: value}
+    l = [key, value]
+    return d, l
+</pre>
+</div>
+
+<div class="collapsible-header">
+	<h3 data-toggle="collapse" data-target="#naming">
+	  Naming
+	</h3>
+	<i class="icon-minus"></i>
+</div>
+<div id="naming" class="collapse in"> 
+<ul>
+	<li>joined_lower for functions, methods, attributes</li>
+	<li>joined_lower or ALL_CAPS for constants</li>
+	<li>camelCase only to conform to pre-existing conventions</li>
+	<li>No spaces just inside docstrings.</li>
+	<li>Attributes: interface, _internal, __private</li>
+</ul>
+</div>
+
+<div class="collapsible-header">
+	<h3 data-toggle="collapse" data-target="#longlines">
+	  Long Lines & Continuations
+	</h3>
+	<i class="icon-minus"></i>
+</div>
+<div id="longlines" class="collapse in"> 
+<p>Keep lines below 80 characters in length.</p>
+<p>Use implied line continuation inside parentheses/brackets/braces:</p>
+<pre class="prettyprint">
+def __init__(self, first, second, third,
+             fourth, fifth, sixth):
+    output = (first + second + third
+              + fourth + fifth + sixth)
+</pre>
+<p>Use implied line continuation inside parentheses/brackets/braces:</p>
+<p>Backslashes are fragile; they must end the line they're on. If you add a space after the backslash, it won't work any more. Also, they're ugly.</p>
+<pre class="prettyprint">
+VeryLong.left_hand_side \
+    = even_longer.right_hand_side()
+</pre>
+</div>
+
+<div class="collapsible-header">
+	<h3 data-toggle="collapse" data-target="#compoundstatements">
+	  Compound Statements
+	</h3>
+	<i class="icon-minus"></i>
+</div>
+<div id="compoundstatements" class="collapse in"> 
+<p>Good:</p>
+<pre class="prettyprint">
+if foo == 'blah':
+    do_something()
+do_one()
+do_two()
+do_three()
+</pre>
+<p>Bad:</p>
+<pre class="prettyprint">
+if foo == 'blah': do_something()
+do_one(); do_two(); do_three()
+</pre>
+</div>
+
+<div class="collapsible-header">
+	<h3 data-toggle="collapse" data-target="#docstringscomments">
+	  Docstrings & Comments
+	</h3>
+	<i class="icon-minus"></i>
+</div>
+<div id="docstringscomments" class="collapse in"> 
+<p>Docstrings = How to use code</p>
+<p>Comments = Why (rationale) & how code works</p>
+<p>Both of these groups include you, so write good docstrings and comments!</p>
+</div>
+
+<div class="collapsible-header">
+	<h3 data-toggle="collapse" data-target="#substrings">
+	  Building Strings from Substrings
+	</h3>
+	<i class="icon-minus"></i>
+</div>
+<div id="substrings" class="collapse in"> 
+<p>Start with a list of strings:</p>
+<pre class="prettyprint">
+colors = ['red', 'blue', 'green', 'yellow']
+</pre>
+<p>We want to join all the strings together into one large string. Especially when the number of substrings is large...</p>
+<p>Don't do this:</p>
+<pre class="prettyprint">
+result = ''
+for s in colors:
+    result += s
+</pre>
+<p>This is very inefficient.</p>
+<p>Instead, do this:</p>
+<pre class="prettyprint">
+result = ''.join(colors)
+</pre>
+<p>The join() string method does all the copying in one pass.</p>
+</div>
+
+<div class="collapsible-header">
+	<h3 data-toggle="collapse" data-target="#in1">
+	  Use in where possible
+	</h3>
+	<i class="icon-minus"></i>
+</div>
+<div id="in1" class="collapse in"> 
+<p>Good:</p>
+<pre class="prettyprint">
+for key in d:
+    print key
+</pre>
+<ul>
+	<li>in is generally faster.</li>
+	<li>This pattern also works for items in arbitrary containers (such as lists, tuples, and sets).</li>
+</ul>
+<p>Bad:</p>
+<pre class="prettyprint">
+for key in d.keys():
+    print key
+</pre>
+<p>This is limited to objects with a keys() method.</p>
+</div>
+
+<div class="collapsible-header">
+	<h3 data-toggle="collapse" data-target="#getMethod">
+	  Dictionary get Method
+	</h3>
+	<i class="icon-minus"></i>
+</div>
+<div id="getMethod" class="collapse in"> 
+<p>We often have to initialize dictionary entries before use:</p>
+<p>This is the naïve way to do it:</p>
+<pre class="prettyprint">
+navs = {}
+for (portfolio, equity, position) in data:
+    if portfolio not in navs:
+        navs[portfolio] = 0
+    navs[portfolio] += position * prices[equity]
+</pre>
+<p>dict.get(key, default) removes the need for the test:</p>
+<pre class="prettyprint">
+navs = {}
+for (portfolio, equity, position) in data:
+    navs[portfolio] = (navs.get(portfolio, 0)
+                       + position * prices[equity])
+</pre>
+<p>Much more direct.</p>
+</div>
+
+<div class="collapsible-header">
+	<h3 data-toggle="collapse" data-target="#setdefault">
+	  Dictionary setdefault Method
+	</h3>
+	<i class="icon-minus"></i>
+</div>
+<div id="setdefault" class="collapse in"> 
+<p>Here we have to initialize mutable dictionary values. Each dictionary value will be a list. This is the naïve way:</p>
+<p>Initializing mutable dictionary values:</p>
+<pre class="prettyprint">
+equities = {}
+for (portfolio, equity) in data:
+    if portfolio in equities:
+        equities[portfolio].append(equity)
+    else:
+        equities[portfolio] = [equity]
+</pre>
+<p>dict.setdefault(key, default) does the job much more efficiently:</p>
+<pre class="prettyprint">
+equities = {}
+for (portfolio, equity) in data:
+    equities.setdefault(portfolio, []).append(
+                                         equity)
+</pre>
+<p>dict.setdefault() is equivalent to "get, or set & get". Or "set if necessary, then get". It's especially efficient if your dictionary key is expensive to compute or long to type.</p>
+<p>The only problem with dict.setdefault() is that the default value is always evaluated, whether needed or not. That only matters if the default value is expensive to compute.</p>
+<p>If the default value is expensive to compute, you may want to use the defaultdict class, which we'll cover shortly.</p>
+</div>
+
+<div class="collapsible-header">
+	<h3 data-toggle="collapse" data-target="#truth">
+	  Testing for Truth Values
+	</h3>
+	<i class="icon-minus"></i>
+</div>
+<div id="truth" class="collapse in"> 
+<pre class="prettyprint">
+# do this:        # not this:
+if x:             if x == True:
+    pass              pass
+</pre>
+<p>It's elegant and efficient to take advantage of the intrinsic truth values (or Boolean values) of Python objects.</p>
+<pre class="prettyprint">
+# do this:        # not this:
+if items:         if len(items) != 0:
+    pass              pass
+
+                  # and definitely not this:
+                  if items != []:
+                      pass
+</pre>
+</div>
+
+<div class="collapsible-header">
+	<h3 data-toggle="collapse" data-target="#defaultparameter">
+	  Default Parameter Values
+	</h3>
+	<i class="icon-minus"></i>
+</div>
+<div id="defaultparameter" class="collapse in"> 
+<p>A common mistake is to set a default value of a list at function definition time.</p>
+<pre class="prettyprint">
+def bad_append(new_item, a_list=[]):
+    a_list.append(new_item)
+    return a_list
+</pre>
+<p>Because the default value of a_list, an empty list, is evaulated at function definition time, every time you call the function, you get the same default value.</p>
+<pre class="prettyprint">
+>>> print bad_append('one')
+['one']
+
+>>> print bad_append('two')
+['one', 'two']
+</pre>
+<p>Lists are a mutable objects; you can change their contents. The correct way to get a default list (or dictionary, or set) is to create it at run time instead, inside the function:</p>
+<pre class="prettyprint">
+def good_append(new_item, a_list=None):
+    if a_list is None:
+        a_list = []
+    a_list.append(new_item)
+    return a_list
+</pre>
+</div>
+
+<div class="collapsible-header">
+	<h3 data-toggle="collapse" data-target="#listcomps">
+	  List Comprehensions
+	</h3>
+	<i class="icon-minus"></i>
+</div>
+<div id="listcomps" class="collapse in"> 
+<p>The traditional way, with for and if statements:</p>
+<pre class="prettyprint">
+new_list = []
+for item in a_list:
+    if condition(item):
+        new_list.append(fn(item))
+</pre>
+<p>As a list comprehension:</p>
+<pre class="prettyprint">
+new_list = [fn(item) for item in a_list
+            if condition(item)]
+</pre>
+<p>Listcomps are clear & concise, up to a point. You can have multiple for-loops and if-conditions in a listcomp, but beyond two or three total, or if the conditions are complex, I suggest that regular for loops should be used. Applying the Zen of Python, choose the more readable way.</p>
+<p>For example, a list of the squares of 0–9:</p>
+<pre class="prettyprint">
+>>> [n ** 2 for n in range(10) if n % 2]
+[1, 9, 25, 49, 81]
+</pre>
+</div>
+
+<div class="collapsible-header">
+	<h3 data-toggle="collapse" data-target="#genexps">
+	  Generator Expressions
+	</h3>
+	<i class="icon-minus"></i>
+</div>
+<div id="genexps" class="collapse in"> 
+<p>Let's sum the squares of the numbers up to 100:</p>
+<p>As a list comprehension:</p>
+<pre class="prettyprint">
+total = sum([num * num for num in range(1, 101)])
+</pre>
+<p>As a generator expression:</p>
+<pre class="prettyprint">
+total = sum(num * num for num in xrange(1, 101))
+</pre>
+<p>Generator expressions ("genexps") are just like list comprehensions, except that where listcomps are greedy, generator expressions are lazy. Listcomps compute the entire result list all at once, as a list. Generator expressions compute one value at a time, when needed, as individual values. This is especially useful for long sequences where the computed list is just an intermediate step and not the final result.</p>
+<p>In this case, we're only interested in the sum; we don't need the intermediate list of squares. We use xrange for the same reason: it lazily produces values, one at a time.</p>
+<p>Rule of thumb:</p>
+<ul>
+<li>Use a list comprehension when a computed list is the desired end result.</li>
+<li>Use a generator expression when the computed list is just an intermediate step.</li>
+</ul>
+</div>
+
+<div class="collapsible-header">
+	<h3 data-toggle="collapse" data-target="#Importing">
+	  Importing
+	</h3>
+	<i class="icon-minus"></i>
+</div>
+<div id="Importing" class="collapse in"> 
+<p>Don't use</p>
+<pre class="prettyprint">
+from module import *
+</pre>
+<p>The from module import * wild-card style leads to namespace pollution. You'll get things in your local namespace that you didn't expect to get. You may see imported names obscuring module-defined local names. You won't be able to figure out where certain names come from. Although a convenient shortcut, this should not be in production code.</p>
+<p>Instead</p>
+<p>Reference names through their module (fully qualified identifiers):</p>
+<pre class="prettyprint">
+import module
+module.name
+</pre>
+<p>Or import a long module using a shorter name (alias):</p>
+<pre class="prettyprint">
+import long_module_name as mod
+mod.name
+</pre>
+<p>Or explicitly import just the names you need:</p>
+<pre class="prettyprint">
+from module import name
+name
+</pre>
+</div>
+
+<div class="collapsible-header">
+	<h3 data-toggle="collapse" data-target="#modules">
+	  Modules & Scripts
+	</h3>
+	<i class="icon-minus"></i>
+</div>
+<div id="modules" class="collapse in"> 
+<p>To make a simultaneously importable module and executable script:</p>
+<pre class="prettyprint">
+if __name__ == '__main__':
+    # script code here
+</pre>
+<p>When imported, a module's __name__ attribute is set to the module's file name, without ".py". So the code guarded by the if statement above will not run when imported. When executed as a script though, the __name__ attribute is set to "__main__", and the script code will run.</p>
+<p>Except for special cases, you shouldn't put any major executable code at the top-level. Put code in functions, classes, methods, and guard it with if __name__ == '__main__'.</p>
+</div>
+
+<div class="collapsible-header">
+	<h3 data-toggle="collapse" data-target="#modulestructure">
+	  Module Structure
+	</h3>
+	<i class="icon-minus"></i>
+</div>
+<div id="modulestructure" class="collapse in"> 
+<pre class="prettyprint">
+"""module docstring"""
+
+# imports
+# constants
+# exception classes
+# interface functions
+# classes
+# internal functions & classes
+
+def main(...):
+    ...
+
+if __name__ == '__main__':
+    status = main()
+    sys.exit(status)
+</pre>
+
+</div>
+
+
+</div>
+
+</section>
+
+</body>
+
+</html>

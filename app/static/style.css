@@ -1,0 +1,68 @@
+aside{
+	border-right: 1px solid #ccc;
+	height: 100%;
+	left: 0px;
+	max-width: 500px;
+	position: fixed;
+	top: 0px;
+	width: 30%;
+}
+
+.aside-logo{
+	position: relative;
+}
+
+.aside-logo span{
+    background-color: white;
+    border-radius: 100%;
+    border: 1px solid #ccc;
+    -webkit-box-shadow: 0 1px 1px rgba(0,0,0,0.3);
+    box-shadow: 0 1px 1px rgba(0,0,0,0.3);
+    left: 50%;
+    margin-left: -48px;
+    padding: 25px;
+    position: absolute;
+    top: -58;
+}
+
+.aside-body{
+	padding: 50px;
+	text-align: center;
+}
+
+.collapsible-header{
+	cursor: pointer;
+	border-top: 1px solid #ccc;
+	border-bottom: 1px solid #ccc;
+	position: relative;
+}
+
+.collapsible-header h3{
+	margin: 0px;
+}
+
+.collapsible-header i{
+	position: absolute;
+	right: 5px;
+	top: 13px;
+}
+
+.collapse{
+	margin: 25px 0px 25px 0px;
+}
+
+.prettyprint{
+	margin: 25px !important;
+	padding: 10px !important;
+}
+
+.wrapper{
+	background-color: #fff;
+	bottom: 0;
+	left: 31%;
+	outline: 0;
+	padding: 20px;
+	position: absolute;
+	right: 0;
+	top: 0;
+}
