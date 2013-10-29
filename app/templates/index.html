@@ -12,6 +12,7 @@
     <link href="/static/bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet">
     <link href="/static/style.css" rel="stylesheet" type="text/css" />
     <script src="/static/bootstrap/js/bootstrap.min.js"></script>
+    <script src="/static/main.js"></script>
 	<script src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
@@ -32,23 +33,78 @@
 </aside>
 
 <section class="wrapper">
+
+<div class="sidebar">
+  <ul>
+    <li>
+    	<a href="#whitespace1div"><i class="icon-chevron-right"></i>Whitespace 1</a>
+    </li>
+    <li>
+    	<a href="#whitespace2div"><i class="icon-chevron-right"></i>Whitespace 2</a>
+    </li>
+    <li>
+    	<a href="#namingdiv"><i class="icon-chevron-right"></i>Naming</a>
+    </li>
+    <li>
+    	<a href="#longlinesdiv"><i class="icon-chevron-right"></i>Long Lines & Continuations</a>
+    </li>
+    <li>
+    	<a href="#compoundstatementsdiv"><i class="icon-chevron-right"></i>Compound Statements</a>
+    </li>
+    <li>
+    	<a href="#docstringscommentsdiv"><i class="icon-chevron-right"></i>Docstrings & Comments</a>
+    </li>
+    <li>
+    	<a href="#substringsdiv"><i class="icon-chevron-right"></i>Building Strings from Substrings</a>
+    </li>
+    <li>
+    	<a href="#in1div"><i class="icon-chevron-right"></i>Use in where possible</a>
+    </li>
+    <li>
+    	<a href="#getMethoddiv"><i class="icon-chevron-right"></i>Dictionary get Method</a>
+    </li>
+    <li>
+    	<a href="#setdefaultdiv"><i class="icon-chevron-right"></i>Dictionary setdefault Method</a>
+    </li>
+    <li>
+    	<a href="#truthdiv"><i class="icon-chevron-right"></i>Testing for Truth </a>
+    </li>
+    <li>
+    	<a href="#defaultparameter"><i class="icon-chevron-right"></i>Default Parameter Values</a>
+    </li>
+    <li>
+    	<a href="#listcompsdiv"><i class="icon-chevron-right"></i>List Comprehensions</a>
+    </li>
+    <li>
+    	<a href="#genexpsdiv"><i class="icon-chevron-right"></i>Generator Expressions</a>
+    </li>
+    <li>
+    	<a href="#Importingdiv"><i class="icon-chevron-right"></i>Importing</a>
+    </li>
+    <li>
+    	<a href="#modulesdiv"><i class="icon-chevron-right"></i>Modules & Scripts</a>
+    </li>
+    <li>
+    	<a href="#modulestructurediv"><i class="icon-chevron-right"></i>Module Structure</a>
+    </li>
+  </ul>
+</div>
+
 <div class="hero">
 
-
 <div class="collapsible-header">
-	<h3 data-toggle="collapse" data-target="#simple">
+	<h3 >
 	  Simple is Better Than Complex
 	</h3>
-	<i class="icon-minus"></i>
 </div>
-<div id="simple" class="collapse in">
+<div class="collapse in">
 	<blockquote>
 		<p>Debugging is twice as hard as writing the code in the first place. Therefore, if you write the code as cleverly as possible, you are, by definition, not smart enough to debug it.</p>
 		<p><i>--Brian W. Kernighan, co-author of The C Programming</i></p>
 	</blockquote>
 </div>
 
-<div class="collapsible-header">
+<div id="whitespace1div" class="collapsible-header">
 	<h3 data-toggle="collapse" data-target="#whitespace1">
 	  Whitespace 1
 	</h3>
@@ -64,7 +120,7 @@
 </ul>
 </div>
 
-<div class="collapsible-header">
+<div id="whitespace2div" class="collapsible-header">
 	<h3 data-toggle="collapse" data-target="#whitespace2">
 	  Whitespace 2
 	</h3>
@@ -86,7 +142,7 @@ def make_squares(key, value=0):
 </pre>
 </div>
 
-<div class="collapsible-header">
+<div id="namingdiv" class="collapsible-header">
 	<h3 data-toggle="collapse" data-target="#naming">
 	  Naming
 	</h3>
@@ -102,7 +158,7 @@ def make_squares(key, value=0):
 </ul>
 </div>
 
-<div class="collapsible-header">
+<div id="longlinesdiv" class="collapsible-header">
 	<h3 data-toggle="collapse" data-target="#longlines">
 	  Long Lines & Continuations
 	</h3>
@@ -125,7 +181,7 @@ VeryLong.left_hand_side \
 </pre>
 </div>
 
-<div class="collapsible-header">
+<div id="compoundstatementsdiv" class="collapsible-header">
 	<h3 data-toggle="collapse" data-target="#compoundstatements">
 	  Compound Statements
 	</h3>
@@ -147,7 +203,7 @@ do_one(); do_two(); do_three()
 </pre>
 </div>
 
-<div class="collapsible-header">
+<div id="docstringscommentsdiv" class="collapsible-header">
 	<h3 data-toggle="collapse" data-target="#docstringscomments">
 	  Docstrings & Comments
 	</h3>
@@ -159,7 +215,7 @@ do_one(); do_two(); do_three()
 <p>Both of these groups include you, so write good docstrings and comments!</p>
 </div>
 
-<div class="collapsible-header">
+<div id="substringsdiv" class="collapsible-header">
 	<h3 data-toggle="collapse" data-target="#substrings">
 	  Building Strings from Substrings
 	</h3>
@@ -185,7 +241,7 @@ result = ''.join(colors)
 <p>The join() string method does all the copying in one pass.</p>
 </div>
 
-<div class="collapsible-header">
+<div id="in1div" class="collapsible-header">
 	<h3 data-toggle="collapse" data-target="#in1">
 	  Use in where possible
 	</h3>
@@ -209,7 +265,7 @@ for key in d.keys():
 <p>This is limited to objects with a keys() method.</p>
 </div>
 
-<div class="collapsible-header">
+<div id="getMethoddiv" class="collapsible-header">
 	<h3 data-toggle="collapse" data-target="#getMethod">
 	  Dictionary get Method
 	</h3>
@@ -235,7 +291,7 @@ for (portfolio, equity, position) in data:
 <p>Much more direct.</p>
 </div>
 
-<div class="collapsible-header">
+<div id="setdefaultdiv" class="collapsible-header">
 	<h3 data-toggle="collapse" data-target="#setdefault">
 	  Dictionary setdefault Method
 	</h3>
@@ -264,7 +320,7 @@ for (portfolio, equity) in data:
 <p>If the default value is expensive to compute, you may want to use the defaultdict class, which we'll cover shortly.</p>
 </div>
 
-<div class="collapsible-header">
+<div id="truthdiv" class="collapsible-header">
 	<h3 data-toggle="collapse" data-target="#truth">
 	  Testing for Truth Values
 	</h3>
@@ -288,7 +344,7 @@ if items:         if len(items) != 0:
 </pre>
 </div>
 
-<div class="collapsible-header">
+<div id="defaultparameterdiv" class="collapsible-header">
 	<h3 data-toggle="collapse" data-target="#defaultparameter">
 	  Default Parameter Values
 	</h3>
@@ -319,7 +375,7 @@ def good_append(new_item, a_list=None):
 </pre>
 </div>
 
-<div class="collapsible-header">
+<div id="listcompsdiv" class="collapsible-header">
 	<h3 data-toggle="collapse" data-target="#listcomps">
 	  List Comprehensions
 	</h3>
@@ -346,7 +402,7 @@ new_list = [fn(item) for item in a_list
 </pre>
 </div>
 
-<div class="collapsible-header">
+<div id="genexpsdiv" class="collapsible-header">
 	<h3 data-toggle="collapse" data-target="#genexps">
 	  Generator Expressions
 	</h3>
@@ -371,7 +427,7 @@ total = sum(num * num for num in xrange(1, 101))
 </ul>
 </div>
 
-<div class="collapsible-header">
+<div id="Importingdiv" class="collapsible-header">
 	<h3 data-toggle="collapse" data-target="#Importing">
 	  Importing
 	</h3>
@@ -401,7 +457,7 @@ name
 </pre>
 </div>
 
-<div class="collapsible-header">
+<div id="modulesdiv" class="collapsible-header">
 	<h3 data-toggle="collapse" data-target="#modules">
 	  Modules & Scripts
 	</h3>
@@ -417,7 +473,7 @@ if __name__ == '__main__':
 <p>Except for special cases, you shouldn't put any major executable code at the top-level. Put code in functions, classes, methods, and guard it with if __name__ == '__main__'.</p>
 </div>
 
-<div class="collapsible-header">
+<div id="modulestructurediv" class="collapsible-header">
 	<h3 data-toggle="collapse" data-target="#modulestructure">
 	  Module Structure
 	</h3>

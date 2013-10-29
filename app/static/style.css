@@ -51,9 +51,64 @@ aside{
 	margin: 25px 0px 25px 0px;
 }
 
+.hero{
+	width: 66%;
+}
+
 .prettyprint{
 	margin: 25px !important;
 	padding: 10px !important;
+}
+
+.sidebar{
+    left: 77.5%;
+    position: fixed;
+    top: 20px;  	
+}
+
+.sidebar ul{
+	background-color: #fff;  
+	-webkit-border-radius: 6px;  
+	-moz-border-radius: 6px;  
+    border-radius: 6px;  
+    -webkit-box-shadow: 0 1px 4px rgba(0,0,0,.065);  
+    -moz-box-shadow: 0 1px 4px rgba(0,0,0,.065);  
+    box-shadow: 0 1px 4px rgba(0,0,0,.065);   
+    list-style-type: none;
+    margin: 0px;
+	padding: 0;  
+}
+
+.sidebar a{
+    border: 1px solid #e5e5e5;
+    display: block;  
+    margin: 0 0 -1px;  
+    padding: 6px 14px;  
+    text-decoration: none;
+    width: 215px;  
+}
+
+.sidebar a:hover{
+	color: #ffffff;
+	background-color: #0088cc;
+}
+
+.sidebar li:first-child a {
+	-webkit-border-radius: 6px 6px 0 0;
+	-moz-border-radius: 6px 6px 0 0;
+	border-radius: 6px 6px 0 0;
+}
+
+.sidebar li:last-child a{
+	-webkit-border-radius: 0 0 6px 6px;
+	-moz-border-radius: 0 0 6px 6px;
+	border-radius: 0 0 6px 6px;	
+}
+
+.sidebar i{
+	float: right;
+	margin-top: 2px;
+	margin-right: -6px;
 }
 
 .wrapper{
@@ -65,4 +120,28 @@ aside{
 	position: absolute;
 	right: 0;
 	top: 0;
+}
+
+@media (max-width: 1119px) {
+
+	.sidebar {
+	display: none;
+	}
+
+	.hero{
+		width: 100%;
+	}
+  
+}
+
+@media (max-height: 600px) {
+	
+	.sidebar {
+	display: none;
+	}
+
+	.hero{
+		width: 100%;
+	}
+  
 }
